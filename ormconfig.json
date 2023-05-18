@@ -1,0 +1,15 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "Grg$@4645631",
+    "database": "node_auth",
+    "_comment " : "must be the link to your entity folder",
+    "entities": [
+       "src/entity/*.ts" 
+    ],
+    "logging"   : false,
+    "synchronize": true
+}
+
