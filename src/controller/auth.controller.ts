@@ -101,14 +101,14 @@ export  const AuthenticatedUser = async (req: Request, res: Response) => {
             message: "Unauthenticated"
         });
     }
-  //find the user
+  //find the user from the database whit the paylod id
        const user = await getRepository(User).findOne({
         where: {
             id: payload.id
         }
     });
 
-    console.log(user);
+    // console.log(user);
    
     if (!user) {
         return res.status(401).send({
@@ -116,7 +116,7 @@ export  const AuthenticatedUser = async (req: Request, res: Response) => {
         });
     }
    
-    const {password, ...data} = user;
+    const {password, id, ...data} = user;//destructuring the user object to remove the password and id
 
     res.send(data)
    
